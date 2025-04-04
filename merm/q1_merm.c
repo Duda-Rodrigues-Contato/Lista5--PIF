@@ -47,7 +47,6 @@ int main() {
     caracteristicasGerais invertebrado3 = {"invertebrado", "anelideo", "hematofago"};
     caracteristicasGerais invertebrado4 = {"invertebrado", "anelideo", "onivoro"};
 
-
     return 0;
 
 }
