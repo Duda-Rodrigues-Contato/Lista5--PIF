@@ -9,43 +9,93 @@
 
 int main() {
 
-    char palavra[50], palavra2[30], palavra3[30];
-
-    enum Vertebrados {
-
-        ave, carnivoro, onivoro, aguia, pomba, mamifero, herbivoro, homem, vaca
-
-    } typedef animaisVertebrados;
-
-    enum Invertebrados {
-
-        inseto, hematofago, herbivoro, pulga, lagarta, anelideo, sanguessuga, onivoro, minhoca
-
-    } typedef animaisInvertebrados;
-
-    animaisVertebrados vertebrado1;
-    animaisVertebrados vertebrado2;
-    animaisInvertebrados invertebrado1;
-    animaisInvertebrados invertebrado2;
+    /*enum EntradaUm {vertebrado, invertebrado};
+    enum VertebradosUm {ave, mamifero};
+    enum VertebradosAve {carnivoro, onivoro};
+    enum VertebradosMamifero {onivoro, herbivoro};
+    enum InvertebradosUm {inseto, hematofago, herbi, pulga, lagarta, anelideo, sanguessuga, oni, minho} typedef animaisInvertebrados;*/
 
     struct Caracteristicas{
 
-        animaisVertebrados vertebrado1;
-
-        char carac1;
-        char carac2;
-        char carac3;
+        char caracteristicaUm;
+        char caracteristicaDois;
+        char caracteristicaTres;
 
     } typedef caracteristicasGerais;
 
-    caracteristicasGerais vertebrado1 = {"vertebrado", "ave", "carnivoro"};
-    caracteristicasGerais vertebrado2 = {"vertebrado", "ave", "onivoro"};
-    caracteristicasGerais vertebrado3 = {"vertebrado", "mamifero", "onivoro"};
-    caracteristicasGerais vertebrado4 = {"vertebrado", "mamifero", "herbivoro"};
-    caracteristicasGerais invertebrado1 = {"invertebrado", "inseto", "hematofago"};
-    caracteristicasGerais invertebrado2 = {"invertebrado", "inseto", "herbivoro"};
-    caracteristicasGerais invertebrado3 = {"invertebrado", "anelideo", "hematofago"};
-    caracteristicasGerais invertebrado4 = {"invertebrado", "anelideo", "onivoro"};
+    caracteristicasGerais entrada1;
+
+    scanf("%s", &entrada1.caracteristicaUm);
+
+    if (entrada1.caracteristicaUm == "vertebrado") {
+
+        scanf("%s", &entrada1.caracteristicaDois);
+
+        if (entrada1.caracteristicaDois == "ave") {
+
+            scanf("%s", &entrada1.caracteristicaTres);
+
+            if (entrada1.caracteristicaTres == "carnivoro") {
+
+                printf("homem\n");
+
+            } else if (entrada1.caracteristicaTres == "onivoro") {
+
+                printf("pomba\n");
+
+            }
+
+        } else if (entrada1.caracteristicaDois == "mamifero") {
+
+            scanf("%s", &entrada1.caracteristicaTres);
+
+            if (entrada1.caracteristicaTres == "onivoro") {
+
+                printf("homem\n");
+
+            } else if (entrada1.caracteristicaTres == "herbivoro") {
+
+                printf("vaca\n");
+            
+            }
+
+
+        }
+
+    } else if (entrada1.caracteristicaUm == "invertebrado") {
+
+        scanf("%s", &entrada1.caracteristicaDois);
+
+        if (entrada1.caracteristicaDois == "inseto") {
+
+            scanf("%s", &entrada1.caracteristicaTres);
+
+            if (entrada1.caracteristicaTres == "hematofago") {
+
+                printf("pulga\n");
+
+            } else if (entrada1.caracteristicaTres == "herbivoro") {
+
+                printf("lagarta\n");
+
+            }
+
+        } else if (entrada1.caracteristicaDois == "anelideo") {
+
+            scanf("%s", &entrada1.caracteristicaTres);
+
+            if (entrada1.caracteristicaTres == "hematofago") {
+
+                printf("sanguessuga\n");
+
+            } else if (entrada1.caracteristicaTres == "onivoro") {
+
+                printf("minhoca\n");
+            }
+
+        }
+
+    }
 
     return 0;
 
